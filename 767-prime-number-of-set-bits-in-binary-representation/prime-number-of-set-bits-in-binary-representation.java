@@ -9,13 +9,8 @@ class Solution {
     public int countPrimeSetBits(int left, int right) {
         int res = 0;
         for(int i = left ; i <= right; i++){
-            int j = i;
-            int sum = 0;
-            while(j > 0){
-                if((j&1) != 0) sum++;
-                j = j>>1;
-            }
-            if(prime(sum)){
+            int bits = Integer.bitCount(i);
+            if(prime(bits)){
                 res++;
             }
         }
